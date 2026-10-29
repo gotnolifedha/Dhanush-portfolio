@@ -1,0 +1,58 @@
+.project-wrap {
+  margin-top: 40px;
+  max-width: 760px;
+}
+
+.project.glow-card {
+  padding: 36px;
+}
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 14px;
+}
+
+.project h3 {
+  margin: 0;
+  font: 500 30px var(--display);
+  letter-spacing: -0.03em;
+  color: var(--chrome-hi);
+}
+
+.project-head span {
+  font-size: 15px;
+  color: var(--ice);
+}
+
+.project p {
+  margin: 0;
+  max-width: 600px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--chrome-hi);
+}
+
+@media (max-width: 560px) {
+  .project.glow-card {
+    padding: 26px;
+  }
+}

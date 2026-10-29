@@ -1,0 +1,95 @@
+.skills-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section > *:not(.skills-lines) {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.skills-lines span {
+  position: absolute;
+  left: -35%;
+  width: 35%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ice), transparent);
+  animation: skills-line 8s linear infinite;
+}
+
+.skills-lines span:nth-child(1) {
+  top: 28%;
+}
+
+.skills-lines span:nth-child(2) {
+  top: 56%;
+  opacity: 0.65;
+  animation-delay: -2.8s;
+  animation-duration: 10s;
+}
+
+.skills-lines span:nth-child(3) {
+  top: 82%;
+  opacity: 0.45;
+  animation-delay: -5.2s;
+  animation-duration: 12s;
+}
+
+@keyframes skills-line {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(385%);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.skills-grid .glow-card {
+  height: 100%;
+}
+
+.skills-grid h3 {
+  margin: 0 0 8px;
+  font: 500 17px var(--display);
+  letter-spacing: -0.02em;
+  color: var(--chrome-hi);
+}
+
+.skills-grid p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-lines span {
+    animation: none;
+    left: 0;
+  }
+}

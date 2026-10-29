@@ -1,0 +1,147 @@
+.hero {
+  position: relative;
+  min-height: calc(100svh - var(--nav-height));
+  padding: 0 max(24px, calc((100vw - 1052px) / 2)) 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 50% at 85% 10%, rgba(138, 107, 255, 0.1), transparent 70%),
+    radial-gradient(50% 45% at 10% 100%, rgba(124, 240, 255, 0.06), transparent 70%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.72), rgba(5, 5, 5, 0.36));
+}
+
+.hero-inner {
+  position: relative;
+  margin: auto 0;
+  padding: 80px 0 40px;
+}
+
+.role {
+  margin: 0 0 26px;
+  font-size: 16px;
+  color: var(--ice);
+}
+
+/* The headline: a chrome gradient clipped to the text, plus a bright spot that follows the cursor. */
+.chrome {
+  --mx: 30%;
+  --my: 30%;
+  margin: 0;
+  font: 500 clamp(26px, 6.2vw, 76px) / 1.08 var(--display);
+  letter-spacing: -0.04em;
+  background:
+    radial-gradient(260px circle at var(--mx) var(--my), #ffffff 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, #f6f9ff 0%, #aab4ca 46%, #5d667c 52%, #cfd7e8 78%, #8f99b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rise 0.9s var(--ease-out) both;
+}
+
+.chrome .line {
+  display: block;
+}
+
+.chrome i {
+  font-style: normal;
+  color: var(--ice);
+  -webkit-text-fill-color: var(--ice);
+}
+
+.typewriter-line {
+  min-height: 2.16em;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 5px;
+  vertical-align: -0.15em;
+  background: var(--ice);
+  animation: typewriter-cursor-blink 0.8s steps(1) infinite;
+}
+
+.intro {
+  max-width: 480px;
+  margin: 30px 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+  animation: rise 0.9s 0.3s var(--ease-out) both;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+  animation: rise 0.9s 0.42s var(--ease-out) both;
+}
+
+.hero-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--chrome-hi);
+}
+
+.status b {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ice);
+  box-shadow: 0 0 0 0 rgba(124, 240, 255, 0.6);
+  animation: ping 2.4s ease-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ping {
+  70% {
+    box-shadow: 0 0 0 10px rgba(124, 240, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 240, 255, 0);
+  }
+}
+
+@keyframes typewriter-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chrome,
+  .intro,
+  .actions,
+  .status b {
+    animation: none;
+  }
+
+  .typewriter-cursor {
+    animation: none;
+  }
+}

@@ -1,0 +1,31 @@
+.glow-card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  padding: 26px;
+  border-radius: 14px;
+  background: var(--panel);
+  isolation: isolate;
+}
+
+/* The border is a gradient ring: a radial glow at the cursor over a plain line colour. */
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: 1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(220px circle at var(--mx) var(--my), var(--ice), transparent 65%),
+    linear-gradient(var(--line), var(--line));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0.55;
+  transition: opacity 0.25s;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}

@@ -1,0 +1,93 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--nav-height);
+  padding: 0 max(24px, calc((100vw - 1052px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035) 30%, rgba(5, 16, 24, 0.34));
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28), 0 0 28px rgba(117, 216, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-top-color: rgba(255, 255, 255, 0.32);
+  overflow: hidden;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.logo {
+  font: 600 22px var(--display);
+  color: #f0fbff;
+}
+
+.logo span {
+  color: var(--ice);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+}
+
+
+.nav-links a {
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s;
+  color: #ffe8d4;
+}
+
+/* Underline that slides in on hover and stays for the section you're reading. */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ice);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .nav-links a {
+  color: #d8f1ff;
+}
+
+[data-theme='dark'] .navbar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035) 30%, rgba(5, 16, 24, 0.34));
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    height: 64px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,64 @@
+/* Resets and base rules that apply to the whole page. */
+:root {
+  color-scheme: dark;
+  font-family: var(--body);
+  color: var(--chrome-mid);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(117, 216, 255, 0.08), transparent 28rem),
+    linear-gradient(180deg, #0a0a0a 0%, #070707 48%, #050505 100%);
+  background-attachment: fixed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+}
+
+html {
+  background: var(--void);
+}
+
+[data-theme='dark'] body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(117, 216, 255, 0.09), transparent 28rem),
+    radial-gradient(circle at 88% 30%, rgba(166, 183, 255, 0.06), transparent 32rem),
+    linear-gradient(180deg, #0a0a0a 0%, #070707 48%, #050505 100%);
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ice);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--ice);
+  color: var(--void);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}

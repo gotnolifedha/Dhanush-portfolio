@@ -1,0 +1,27 @@
+.content-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 110px 24px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: var(--nav-height); /* so the sticky nav doesn't cover the heading */
+}
+
+.content-section h2 {
+  margin: 0 0 24px;
+  font: 500 clamp(28px, 4.6vw, 52px) / 1.12 var(--display);
+  letter-spacing: -0.035em;
+  color: var(--chrome-hi);
+}
+
+.content-section .lede {  /* big intro paragraph under a heading */
+  max-width: 540px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+@media (max-width: 560px) {
+  .content-section {
+    padding: 80px 20px;
+  }
+}

@@ -1,0 +1,21 @@
+/* Two columns: heading on the left, paragraph on the right. */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 64px;
+  align-items: start;
+}
+
+.about h2 {
+  margin: 0;
+}
+
+.about .lede {
+  padding-top: 8px;
+}
+
+@media (max-width: 800px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
